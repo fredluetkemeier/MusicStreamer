@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="930.0" style="-fx-background-color: #606060;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flpn6musicstreamer.MainController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="7.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Kings of Leon Streamer" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Separator maxWidth="600.0" minWidth="600.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Separator>
+            <GridPane maxHeight="460.0" maxWidth="910.0" minHeight="460.0" minWidth="910.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="310.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="All Songs" textFill="WHITE">
+                           <font>
+                              <Font name="Consolas" size="18.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="allSongsListView" fixedCellSize="30.0" minHeight="380.0" style="-fx-background-color: #999999;" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="addToPlaylistButton" maxWidth="145.0" minWidth="145.0" mnemonicParsing="false" onAction="#addToPlaylistButtonClick" style="-fx-background-color: #72ff72;" text="Add to Playlist">
+                                 <font>
+                                    <Font name="Consolas" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="middleVBox" alignment="TOP_CENTER" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Playlist" textFill="WHITE">
+                           <font>
+                              <Font name="Consolas" size="18.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="playlistListView" fixedCellSize="40.0" maxHeight="380.0" minHeight="380.0" onMouseClicked="#playlistSelected" style="-fx-background-color: #999999;" />
+                        <HBox fx:id="playlistControlHBox" alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="newPlaylistButton" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#newPlaylistButtonClick" style="-fx-background-color: #4cc6ff;" text="+">
+                                 <font>
+                                    <Font name="Consolas" size="24.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button fx:id="removePlaylistButton" maxWidth="75.0" minWidth="75.0" mnemonicParsing="false" onAction="#removePlaylistButtonClick" style="-fx-background-color: #ffc04c;" text="-">
+                                 <font>
+                                    <Font name="Consolas" size="24.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" GridPane.columnIndex="2">
+                     <children>
+                        <Label text="Tracklist" textFill="WHITE">
+                           <font>
+                              <Font name="Consolas" size="18.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="tracklistListView" fixedCellSize="40.0" minHeight="380.0" onMouseClicked="#trackSelected" style="-fx-background-color: #999999;" />
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="removeFromPlaylistButton" maxWidth="145.0" minWidth="145.0" mnemonicParsing="false" onAction="#removeFromPlaylistButtonClick" style="-fx-background-color: #ff7171;" text="Remove">
+                                 <font>
+                                    <Font name="Consolas" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children></HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </GridPane>
+            <HBox alignment="CENTER" maxHeight="100.0" spacing="40.0" style="-fx-background-color: #c4c4c4;" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="lastButton" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#lastButtonClick" pickOnBounds="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="playButton" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#playButtonClick" pickOnBounds="true" />
+                  <ImageView fx:id="nextButton" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#nextButtonClick" pickOnBounds="true" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </HBox>
+         </children></VBox>
+      <Button mnemonicParsing="false" onAction="#aboutButtonClick" style="-fx-background-color: #606060; -fx-border-color: #999999;" text="About" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold" size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Flpn6MusicStreamer.jnlp">
+  <information>
+    <title>Flpn6MusicStreamer</title>
+    <vendor>Fred</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Flpn6MusicStreamer.jar" size="23764" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Flpn6MusicStreamer" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="flpn6musicstreamer.Flpn6MusicStreamer"  name="Flpn6MusicStreamer" />
+  <update check="always"/>
+</jnlp>

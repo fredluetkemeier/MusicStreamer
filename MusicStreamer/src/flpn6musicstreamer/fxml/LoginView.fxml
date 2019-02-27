@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flpn6musicstreamer.LoginController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0">
+         <children>
+            <Label alignment="CENTER" text="Login">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="loginFailedLabel" textFill="#f82626">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator maxWidth="400.0" />
+         </children>
+      </VBox>
+      <TextField fx:id="usernameField" maxWidth="200.0" onKeyPressed="#enterKeyPressed" promptText="Username" />
+      <PasswordField fx:id="passwordField" maxWidth="200.0" onKeyPressed="#enterKeyPressed" promptText="Password" />
+      <CheckBox fx:id="rememberMeCheckBox" mnemonicParsing="false" text="Remember Me">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="loginSubmitButton" maxWidth="125.0" mnemonicParsing="false" onAction="#loginSubmitButtonClick" style="-fx-background-color: #8cffbc;" text="Submit">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</VBox>
